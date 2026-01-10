@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Preconnect to external domains -->
+    <link rel="dns-prefetch" href="https://api.dicebear.com" />
+    <link rel="preconnect" href="https://api.dicebear.com" crossorigin />
+
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Notification Library for React" />
     <meta property="og:description" content="A versatile notification library for React applications, allowing for easy creation, configuration, and management of notifications." />
@@ -19,11 +23,48 @@
     <meta name="keywords" content="react, notifications, library, reactjs, web development" />
     <meta name="description" content="A versatile notification library for React applications, allowing for easy creation, configuration, and management of notifications." />
 
+    <!-- Critical CSS for instant render -->
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body, #root { width: 100%; min-height: 100%; }
+      body {
+        background: #000000;
+        color: #ffffff;
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Segoe UI', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      #root { min-height: 100vh; }
+      /* Loading state */
+      .app-loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: #000000;
+      }
+      .spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(139, 92, 246, 0.3);
+        border-top-color: #8b5cf6;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
 
     <title>React Simple Notify</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Loading fallback -->
+      <div class="app-loading">
+        <div class="spinner"></div>
+      </div>
+    </div>
     <script type="module" src="src/index.tsx"></script>
   </body>
 </html>

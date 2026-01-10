@@ -75,7 +75,7 @@ export const Hero: FC = () => {
 
         <div className={styles.stats}>
           <div className={styles.stat}>
-            <div className={styles.statValue}>~5.6 KB</div>
+            <div className={styles.statValue}>~3.5 KB</div>
             <div className={styles.statLabel}>Gzipped</div>
           </div>
           <div className={styles.stat}>

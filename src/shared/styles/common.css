@@ -52,3 +52,10 @@ button {
   background: rgba(255, 255, 255, 0.15);
   color: #ffffff;
 }
+
+/* Loading spinner animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
