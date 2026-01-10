@@ -1,0 +1,38 @@
+{
+  "name": "rsn-demo",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Demo application for react-simple-notify library",
+  "homepage": "https://rsn.gruffix.ru",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-simple-notify": "^1.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "gh-pages": "^6.1.1",
+    "sass": "^1.69.7",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GruFFix/rsn-demo.git"
+  },
+  "author": "Lomanov Kirill <GruFFix@yandex.ru>",
+  "license": "MIT"
+}
