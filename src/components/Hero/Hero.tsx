@@ -35,7 +35,7 @@ export const Hero: FC = () => {
         <div className={styles.badges}>
           <div className={styles.badge}>
             <span className={styles.badgeDot}></span>
-            v1.0.0
+            v1.0.5
           </div>
           <a
             href="https://github.com/GruFFix/react-simple-notify"
