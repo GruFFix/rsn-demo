@@ -2,14 +2,12 @@ import { FC } from 'react'
 import styles from './Footer.module.scss'
 
 export const Footer: FC = () => {
-  const currentYear = new Date().getFullYear()
-
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.bottom}>
           <p className={styles.copyright}>
-            © {currentYear} React Simple Notify. Built with ❤️ by{' '}
+            © 2024 React Simple Notify. Built with ❤️ by{' '}
             <a
               href="mailto:GruFFix@yandex.ru"
               className={styles.authorLink}

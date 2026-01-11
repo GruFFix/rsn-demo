@@ -218,6 +218,171 @@ export const Showcase: FC = () => {
   }
 
   const presets: Preset[] = [
+    // Featured: Achievement (Fully Custom Render)
+    {
+      id: 'achievement',
+      name: 'Achievement',
+      description: 'Fully custom design',
+      icon: '🏆',
+      gradient: 'linear-gradient(135deg, #f59e0b, #ea580c)',
+      config: { type: 'custom', duration: 5000 },
+      demo: () => {
+        setNotificationCount((prev) => prev + 1)
+        notify.open({
+          alignment: NotifyAlignment.topCenter,
+          duration: 6000,
+          pauseOnHover: true,
+          render: ({ onClose }) => (
+            <div
+              style={{
+                position: 'relative',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '1rem',
+                padding: '1.25rem 1.5rem',
+                background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+                border: '2px solid #f59e0b',
+                borderRadius: '16px',
+                boxShadow: '0 20px 60px rgba(245, 158, 11, 0.4), 0 0 0 1px rgba(245, 158, 11, 0.2)',
+                minWidth: '380px',
+                overflow: 'hidden',
+              }}
+            >
+              {/* Shine effect */}
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: '-100%',
+                  width: '100%',
+                  height: '100%',
+                  background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent)',
+                  animation: 'shine 2s ease-in-out infinite',
+                }}
+              />
+
+              {/* Trophy Icon */}
+              <div
+                style={{
+                  fontSize: '3rem',
+                  filter: 'drop-shadow(0 0 20px rgba(245, 158, 11, 0.6))',
+                  animation: 'float 3s ease-in-out infinite',
+                }}
+              >
+                🏆
+              </div>
+
+              {/* Content */}
+              <div style={{ flex: 1 }}>
+                <div
+                  style={{
+                    fontSize: '0.75rem',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em',
+                    color: '#f59e0b',
+                    fontWeight: 700,
+                    marginBottom: '0.25rem',
+                  }}
+                >
+                  Achievement Unlocked
+                </div>
+                <h4
+                  style={{
+                    margin: 0,
+                    fontSize: '1.125rem',
+                    fontWeight: 700,
+                    color: '#ffffff',
+                    marginBottom: '0.25rem',
+                  }}
+                >
+                  Master Builder
+                </h4>
+                <p
+                  style={{
+                    margin: 0,
+                    fontSize: '0.875rem',
+                    color: '#94a3b8',
+                    lineHeight: 1.4,
+                  }}
+                >
+                  Created 100 custom notifications
+                </p>
+                {/* XP Bar */}
+                <div
+                  style={{
+                    marginTop: '0.75rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                  }}
+                >
+                  <div
+                    style={{
+                      flex: 1,
+                      height: '6px',
+                      background: 'rgba(255, 255, 255, 0.1)',
+                      borderRadius: '3px',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: '75%',
+                        height: '100%',
+                        background: 'linear-gradient(90deg, #f59e0b, #ea580c)',
+                        borderRadius: '3px',
+                        animation: 'fillXP 2s ease-out',
+                      }}
+                    />
+                  </div>
+                  <span
+                    style={{
+                      fontSize: '0.75rem',
+                      fontWeight: 600,
+                      color: '#f59e0b',
+                    }}
+                  >
+                    +500 XP
+                  </span>
+                </div>
+              </div>
+
+              {/* Close button */}
+              <button
+                onClick={onClose}
+                style={{
+                  position: 'absolute',
+                  top: '0.5rem',
+                  right: '0.5rem',
+                  width: '28px',
+                  height: '28px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  border: 'none',
+                  borderRadius: '8px',
+                  color: '#94a3b8',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  fontSize: '0.875rem',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)'
+                  e.currentTarget.style.color = '#ffffff'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)'
+                  e.currentTarget.style.color = '#94a3b8'
+                }}
+              >
+                ✕
+              </button>
+            </div>
+          ),
+        })
+      },
+    },
     // Featured: Progress Bar
     {
       id: 'progress-bar',
